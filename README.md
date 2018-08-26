@@ -51,7 +51,7 @@ python -m ipykernel install --user --name drlnd --display-name "drlnd"
 1. clone , follow instruction for installing dependencies 
 
 ## Download the Unity Environment
-1. Download environment for your system into this repository root
+Download environment based on  your operating system.
 
 * Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
 
