@@ -1,1 +1,75 @@
+\documentclass[]{article}
 
+\usepackage{graphicx}
+\usepackage{subfig}
+% Title Page
+\title{Navigation Using Deep Q learning }
+\author{}
+
+
+\begin{document}
+\maketitle
+
+
+\section{Goal}
+
+
+The goal of the agent is to navigate (collect yellow bananas while avoid blue bananas!) in a large, square world.\
+A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  Thus, the goal of your agent is to collect as many yellow bananas as possible while avoiding blue bananas.  
+
+The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
+
+\begin{list}{}{}
+	\item  0 - move forward.
+	\item  1 - move backward.
+	\item  2 - move left.
+	\item  3 - move right.
+\end{list}
+The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes. In order to compare different techniques the training was stopped once the score reached an average of 13. 
+ 
+
+\section{Method}
+Two different approaches were used in this project.
+Q-learning (DQN) and Double Q-learning (DDQN).
+
+
+A deep Q network (DQN) is a multi-layered neural network that for a given state s outputs a vector of action values. I used the fixed target network and experience replay similar to \cite{mnih2015human}
+The max operator in standard Q-learning and DQN, uses the same values both to select and to evaluate
+an action. This makes it more likely to select overestimated values, resulting in overoptimistic value estimates. To prevent
+this, we can decouple the selection from the evaluation. In Double Q-learning, two value functions
+are learned by assigning experiences randomly to update
+one of the two value functions, resulting in two sets of
+weights, θ and θ'. For each update, one set of weights is used to determine the greedy policy and the other to determine its \cite{hasselt2010double}. 
+
+Neural network with following architecture was used to approximate Q value. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Picture1}
+	\caption{Neural network Architecture}
+	\label{fig:picture1}
+\end{figure}
+
+\section{Results}
+The agent based DQN implementation could achieve a score of 13 after 542 episodes and the agent based on DDQN could achieve a score of 13 after 509 episodes.
+
+\begin{figure}
+	\centering
+	\subfloat[DQN]{\includegraphics[width=0.3\textwidth]{DQN}\label{fig:f1}}
+	\hfill
+	\subfloat[DDQN]{\includegraphics[width=0.3\textwidth]{DDQN}\label{fig:f2}}
+	\hfill
+	\subfloat[DQN vs DDQN]{\includegraphics[width=0.3\textwidth]{Compare}\label{fig:f2}}
+	\caption{DDQN vs DQN  average scores  }
+\end{figure}
+
+DDQN shows slight improvement in compare to DQN.  Hyper parameter tuning can also improve the performance of the agent. 
+
+\section{Improvement}
+Other techniques could be explored to improve the current model such as Prioritized DDQN,Dueling DDQN, A3C, Distributional DQN and rainbow \cite{hessel2017rainbow}
+
+
+\clearpage
+\bibliographystyle{plain}
+
+\bibliography{Report}
+\end{document}          
