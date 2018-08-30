@@ -67,7 +67,7 @@ Download environment based on  your operating system.
 * Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
 
 
-# Refrences 
+# References 
 - I reused some of the code published in this repository
 https://github.com/udacity/deep-reinforcement-learning/tree/master/dqn/solution
 - The descriptions of the project were obtained from 
