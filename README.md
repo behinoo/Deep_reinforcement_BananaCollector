@@ -68,7 +68,5 @@ Download environment based on  your operating system.
 
 
 # References 
-- I reused some of the code published in this repository
-https://github.com/udacity/deep-reinforcement-learning/tree/master/dqn/solution
 - The descriptions of the project were obtained from 
 https://github.com/udacity/deep-reinforcement-learning/tree/master/p1_navigation
